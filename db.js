@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-const mongoURL = 'mongodb://127.0.0.1:27017/restaurants';
-mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+require('dotenv').config();
+//const mongoURL = 'mongodb://127.0.0.1:27017/restaurants';
+//const mongoURL = 'mongodb+srv://HemloNiti:niti@cluster0.9qpvk1h.mongodb.net/';
+// const mongoURL = process.env.MONGODB_URL;
+// mongoose.connect(mongoURL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
 const db = mongoose.connection;
 db.on('connected', () => {
     console.log('connected to MongoDB server');
